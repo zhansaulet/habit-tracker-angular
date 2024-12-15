@@ -1,0 +1,60 @@
+<header>
+  <div class="container">
+    <div class="header-wrapper">
+      <div class="header-top">
+        <span class="header-logo">DailyHabits</span>
+        <button class="header-btn">How it works</button>
+      </div>
+      <div class="header-bottom">
+        <div class="month-btn">
+          <button class="arrow-btn">&#x3c;</button>
+          <span>December, 2024</span>
+          <button class="arrow-btn">&#62;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div class="main-wrapper">
+      <div class="table-container">
+        <table mat-table [dataSource]="habits" class="mat-elevation-z8">
+      
+          <!-- Days Header -->
+          <ng-container matColumnDef="days">
+            <th mat-header-cell *matHeaderCellDef colspan="31" class="days-header">
+              <div class="days">
+                <span *ngFor="let day of days">1</span>
+              </div>
+            </th>
+          </ng-container>
+          
+          <!-- Habit Name -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Habits </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+      
+          <!-- Goal -->
+          <ng-container matColumnDef="goal">
+            <th mat-header-cell *matHeaderCellDef> Goal </th>
+            <td mat-cell *matCellDef="let element"> {{element.goal}} </td>
+          </ng-container>
+      
+          <!-- Achieved -->
+          <ng-container matColumnDef="achieved">
+            <th mat-header-cell *matHeaderCellDef> Achieved </th>
+            <td mat-cell *matCellDef="let element"> {{element.achieved}} </td>
+          </ng-container>
+      
+          <!-- Row Definitions -->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      
+      <button mat-flat-button class="add-habit-btn" (click)="openDialog()"><mat-icon>add</mat-icon>New habit</button>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,17 @@
+.habit {
+  &-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  &-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &-btn {
+    width: 200px;
+  }
+}

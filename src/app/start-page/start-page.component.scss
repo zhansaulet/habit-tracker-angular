@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.start-wrapper {
+  border: 1px solid #333;
+  border-radius: 15px;
+  padding: 20px;
+  width: 700px;
+  align-content: center;
+}
+
+.start-btn {
+  width: 200px;
+}
