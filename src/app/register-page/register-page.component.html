@@ -1,0 +1,51 @@
+<app-header-auth></app-header-auth>
+<main>
+  <div class="container">
+    <div class="register-page-wrappper">
+      <h4 class="register-form-title">Create your DailyHabits account</h4>
+      <form class="register-form" [formGroup]="loginForm">
+        <mat-form-field>
+          <mat-label>Email address</mat-label>
+          <input matInput type="text" />
+          <mat-error>
+            Email is not valid
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('minlength')">
+            Email must be at least 3 characters long
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="isShowPassword ? 'text' : 'password'" />
+          <button
+            mat-icon-button
+            matSuffix
+            [attr.aria-label]="isShowPassword ? 'Hide password' : 'Show password'"
+            [attr.aria-pressed]="isShowPassword"
+            (click)="togglePasswordVisibility()"
+          >
+            <mat-icon>{{isShowPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </button>
+          <mat-error>
+            Password is not valid
+          </mat-error>
+        </mat-form-field>
+        <button mat-flat-button color="primary" class="register-form-btn" type="submit">
+          CREATE ACCOUNT
+        </button>
+      </form>
+      <div class="terms-wrapper">
+        <p class="terms-title">Terms of service (it’s here so that you definitely read it):</p>
+        <ul class="terms-list">
+        <li class="terms-list-item">1) All your data is your own. At any time, you can ask us to delete your account and export your data.</li>
+        <li class="terms-list-item">2) DailyHabits does not use any analytics software that personally identifies you. Any analytics is only to discover the proper functioning of the app.</li>
+        <li class="terms-list-item">3) DailyHabits does not use your data for any marketing purposes. You will only receive emails critical to the service.</li>
+        <li class="terms-list-item">4) DailyHabits is not liable for any loss of data due to unforced errors that are outside our control from the external services that we use, such as Amazon Web Services where we host our servers and database.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</main>

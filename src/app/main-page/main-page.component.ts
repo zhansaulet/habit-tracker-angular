@@ -1,17 +1,25 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { CreateHabitDialogComponent } from './create-habit/create-habit-dialog.component';
 import { MatTableModule } from '@angular/material/table';
 import { NgFor } from '@angular/common';
+import { HeaderMainComponent } from '../header-main/header-main.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, MatTableModule, NgFor],
+  imports: [
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule,
+    NgFor,
+    HeaderMainComponent,
+  ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent {
   private readonly dialog = inject(MatDialog);

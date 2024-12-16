@@ -1,0 +1,43 @@
+.header {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-logo {
+    font-size: 28px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  &-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    font-style: 24px;
+    font-weight: 500;
+  }
+
+  &-top {
+    margin-bottom: 20px;
+  }
+
+  &-bottom {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.arrow-btn {
+  font-size: 16px;
+  font-weight: 900;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.add-habit-btn {
+  width: 200px;
+}

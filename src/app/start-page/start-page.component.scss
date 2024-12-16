@@ -13,6 +13,11 @@
   align-content: center;
 }
 
+.btns-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
 .start-btn {
   width: 200px;
 }

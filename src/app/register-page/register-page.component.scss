@@ -1,0 +1,44 @@
+.register-page-wrappper {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 400px;
+  height: 400px;
+
+  &-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  &-btn {
+    width: 300px;
+    align-self: center;
+  }
+}
+
+.terms {
+  &-title {
+    font-size: 13px;
+    color: #808080;
+  }
+
+  &-list {
+    width: 500px;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+    color: #808080;
+
+    &-item {
+      margin-bottom: 10px;
+    }
+  }
+}

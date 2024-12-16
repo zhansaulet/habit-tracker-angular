@@ -3,11 +3,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-start-page',
+  selector: 'app-header-auth',
   standalone: true,
   imports: [MatButtonModule, RouterLink],
-  templateUrl: './start-page.component.html',
-  styleUrl: './start-page.component.scss',
+  templateUrl: './header-auth.component.html',
+  styleUrl: './header-auth.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StartPageComponent {}
+export class HeaderAuthComponent {}

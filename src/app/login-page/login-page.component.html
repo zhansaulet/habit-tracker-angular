@@ -1,0 +1,46 @@
+<app-header-auth></app-header-auth>
+<main>
+  <div class="container">
+    <div class="login-page-wrappper">
+      <h4 class="login-form-title">Login to your DailyHabits account</h4>
+      <form class="login-form" [formGroup]="loginForm">
+        <mat-form-field>
+          <mat-label>Email address</mat-label>
+          <input matInput type="text" />
+          <mat-error>
+            Email is not valid
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('minlength')">
+            Email must be at least 3 characters long
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="isShowPassword ? 'text' : 'password'" />
+          <button
+            mat-icon-button
+            matSuffix
+            [attr.aria-label]="isShowPassword ? 'Hide password' : 'Show password'"
+            [attr.aria-pressed]="isShowPassword"
+            (click)="togglePasswordVisibility()"
+          >
+            <mat-icon>{{isShowPassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </button>
+          <mat-error>
+            Password is not valid
+          </mat-error>
+        </mat-form-field>
+        <button mat-flat-button color="primary" class="login-form-btn" type="submit">
+          LOGIN
+        </button>
+      </form>
+      <div class="info-wrapper">
+        <p>Forgot your password? <a class="reset-pwd" routerLink="/resetpassword">Reset password</a></p>
+        <p>Need help? <a href="#" class="contact-link">Contact support</a></p>
+      </div>
+    </div>
+  </div>
+</main>
