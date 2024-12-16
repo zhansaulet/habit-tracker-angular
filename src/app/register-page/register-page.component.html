@@ -1,11 +1,11 @@
 <app-header-auth></app-header-auth>
-<main>
-  <div class="container">
+  <div class="register-container">
     <div class="register-page-wrappper">
-      <h4 class="register-form-title">Create your DailyHabits account</h4>
+      <h1 class="register-form-title">Create your DailyHabits account</h1>
+      <p>Have an account? <span class="interactive-link" routerLink="/login">Sign in</span></p>
       <form class="register-form" [formGroup]="loginForm">
-        <mat-form-field>
-          <mat-label>Email address</mat-label>
+        <mat-label><span class="form-label-red">*</span>Email address</mat-label>
+        <mat-form-field appearance="outline">
           <input matInput type="text" />
           <mat-error>
             Email is not valid
@@ -17,8 +17,8 @@
             Email must be at least 3 characters long
           </mat-error>
         </mat-form-field>
-        <mat-form-field>
-          <mat-label>Enter your password</mat-label>
+        <mat-label><span class="form-label-red">*</span>Enter your password</mat-label>
+        <mat-form-field appearance="outline">
           <input matInput [type]="isShowPassword ? 'text' : 'password'" />
           <button
             mat-icon-button
@@ -48,4 +48,3 @@
       </div>
     </div>
   </div>
-</main>

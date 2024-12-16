@@ -1,31 +1,43 @@
-.login-page-wrappper {
+.login-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
+.wrapper {
+  width: 400px;
+  padding: 45px;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 400px;
-  height: 400px;
 
   &-title {
-    font-size: 30px;
-    margin-bottom: 30px;
+    font-size: 24px;
   }
 
   &-btn {
-    width: 300px;
-    align-self: center;
+    margin-bottom: 15px;
   }
 }
 
 .info-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  align-items: center;
+}
+
+.form-label-red {
+  color: red;
+}
+
+.interactive-link {
+  color: #005cbb;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
